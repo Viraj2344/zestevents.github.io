@@ -14,26 +14,31 @@ body {
   text-rendering: optimizeLegibility;
   font-weight: initial;
   background-color: #110f16
-  
-
 }
-
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5em;
+  justify-content: center;
+}
 .dark {
   background: #110f16;
   /* padding: 2em; */
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-direction: row;
+
 }
 
 .light {
   background: #110f16;
   /* padding: 2em; */
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+
 
 }
 
@@ -59,21 +64,25 @@ a, a:hover {
 .postcard {
   /* flex-wrap: wrap; */
   display: flex;
+  flex-direction: column;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
   margin: 0 0 2rem 0;
   overflow: hidden;
   position: relative;
   color: #ffffff;
+  margin: auto;
+  margin-bottom: 2em;
+
 }
 .postcard.dark {
   background-color: #18151f;
-  max-width: 720px;
+  max-width: 400px;
   
 }
 .postcard.light {
   background-color: #e1e5ea;
-  max-width: 720px;
+  max-width: 400px;
 
 }
 .postcard .t-dark {
@@ -87,8 +96,14 @@ a, a:hover {
   font-weight: 500;
   line-height: 1.2;
 }
-.read{
-  color:#8ad2ff;
+.lightread{
+  /* color:#ffffff; */
+  /* background-color: #000000; */
+  width: fit-content;
+  /* padding: 0.41em; */
+  display: block;
+  margin: auto;
+  border-radius: 5px;
 }
 .postcard .small {
   font-size: 80%;
@@ -101,11 +116,13 @@ a, a:hover {
   font-size: 1.75rem;
 }
 .postcard .postcard__img {
-  max-height: 180px;
+height: 300px;
   width: 100%;
-  object-fit: cover;
-  position: relative;
+  object-fit:contain;
+  position:relative;
   padding: 0%;
+
+
   /* display:none; */
 
 }
@@ -168,6 +185,9 @@ a, a:hover {
   width: 100px;
 }
 @media all and (max-width: 720px) {
+  .container{
+    margin: 0;
+  }
     .dark{
         padding: 0%;
         padding-bottom: 2em;
@@ -244,11 +264,11 @@ a, a:hover {
   }
 
   .postcard.dark .postcard__text:before {
-    background: #18151f;
+    background: #18151f00;
   }
 
   .postcard.light .postcard__text:before {
-    background: #e1e5ea;
+    background: #e1e5ea00;
   }
 }
 /* COLORS */
@@ -370,3 +390,124 @@ a, a:hover {
     }
 
   }
+
+
+.buttonBoxlight{
+  /* margin: 0 20px 40px; */
+  position:relative;
+  max-width: fit-content;
+  min-width: fit-content;
+  /* flex: 20%; */
+  display: block;
+  margin: auto;
+  border-radius: 0.5em;
+
+}
+
+button{
+  width:fit-content;
+  height:fit-content;
+  position:relative;
+  background:rgba(255, 255, 255, 0.52);
+  /* text-transform:uppercase; */
+  color:rgb(0, 0, 0);
+  font-weight:700;
+  letter-spacing:1px;
+  border:none;
+  font-size:15px;
+  outline:none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+#light{
+  overflow:hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition:all .2s ease-in-out;
+}
+
+#light:before{
+  content:" ";
+  display:block;
+  width:200px;
+  height:80px;
+  background:rgba(0, 0, 0, 0.4);
+  position:absolute;
+  top:-10px;
+  left:-200px;
+  transform:rotate(-45deg);
+  transition:all .2s ease-in-out;  
+}
+
+#light:hover:before{
+  margin-left:300%;
+}
+
+#light:hover {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+
+.buttonBoxdark{
+  /* margin: 0 20px 40px; */
+  position:relative;
+  max-width: fit-content;
+  min-width: fit-content;
+  /* flex: 20%; */
+  display: block;
+  margin: auto;
+  border-radius: 0.5em;
+
+}
+
+button{
+  width:fit-content;
+  height:fit-content;
+  position:relative;
+  background:rgba(255, 255, 255, 0.52);
+  /* text-transform:uppercase; */
+  color:rgb(0, 0, 0);
+  font-weight:700;
+  letter-spacing:1px;
+  border:none;
+  font-size:15px;
+  outline:none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+#dark{
+  overflow:hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition:all .2s ease-in-out;
+}
+
+#dark:before{
+  content:" ";
+  display:block;
+  width:200px;
+  height:80px;
+  background:rgba(255, 255, 255, 0.4);
+  position:absolute;
+  top:-10px;
+  left:-200px;
+  transform:rotate(-45deg);
+  transition:all .2s ease-in-out;  
+}
+
+#dark:hover:before{
+  margin-left:300%;
+}
+
+#dark:hover {
+  border: 1px solid rgb(255, 255, 255);
+}
+
