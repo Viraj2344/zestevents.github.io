@@ -54,12 +54,7 @@ a, a:hover {
   font-size: 4rem;
 
 }
-.button{
-  height: 2em;
-  /* display: block; */
-  margin-top: 30em;
 
-}
 /* Cards */
 .postcard {
   /* flex-wrap: wrap; */
